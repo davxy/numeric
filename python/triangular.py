@@ -1,9 +1,10 @@
+# Triangular system solver
 import numpy as np
 
 def triangular(A, b, typ):
     '''
     input:
-      T: triangular matrix
+      A: triangular matrix
       b: known terms vector
       typ: 0 if upper, 1 if lower
     '''
@@ -38,7 +39,7 @@ if __name__ == "__main__":
     x = triangular(A, b, 1)
     # Check
     if np.allclose(b, A*x) == False:
-        print('Lower triagular test failure')
+        raise Exception('Lower triangular test failure')
     
     # Upper triangular matrix
     A = np.matrix('12 48  2 51 49;'
@@ -52,4 +53,4 @@ if __name__ == "__main__":
     x = triangular(A, b, 0)
     # Check
     if np.allclose(b, A*x) == False:
-        print('Upper triagular test failure')
+        raise Exception('Upper triangular test failure')

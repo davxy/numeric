@@ -52,7 +52,7 @@ if __name__ == '__main__':
     x = np.array(x)
     b = np.array(b)
     if np.allclose(np.dot(A, x), b) != True:
-        print("Solution not correct...")
+        raise Exception("Solution not correct...")
 
     '''
     Diagonal cohefficient matrix solution test
@@ -72,4 +72,4 @@ if __name__ == '__main__':
     x = np.array(x)
     b = np.array(b)
     if np.allclose(np.dot(A, x), b) != True:
-        print("Solution not correct...")
+        raise Exception("Solution not correct...")

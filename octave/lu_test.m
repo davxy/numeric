@@ -10,11 +10,10 @@ A = [ 29 11 59  9 13;
 B = lu_factor(A)
 % extract lower part
 L = tril(B,-1) + eye(5)
-% extract the upper part
+% extract upper part
 U = triu(B)
 % Check
-LU = L*U
-if allclose(A, LU, 0.1) == 0
+if allclose(A, L*U, 0.1) == 0
   error('LU factorizzation test failure')
 end
 

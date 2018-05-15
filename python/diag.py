@@ -1,3 +1,4 @@
+# Diagonal system solver
 def diag_solve(D, b):
     '''
     input:
@@ -7,7 +8,7 @@ def diag_solve(D, b):
     '''
     dlen = len(D)
     if dlen != len(b):
-        print("Error: input vectors lengths mismatch")
+        raise Exception("Error: input vectors lengths mismatch")
     x = list(range(dlen))
     for i in list(range(dlen)):
         x[i] = float(b[i])/D[i]
@@ -19,4 +20,3 @@ if __name__ == '__main__':
     b = [4,8,1,4,3,9,10,12,11,7]
     x = diag_solve(D, b)
     print(x)
-

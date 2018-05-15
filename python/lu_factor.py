@@ -15,12 +15,10 @@ def lu_factor(A):
     # Get the matrix size
     n = A.shape[0]
     if n != A.shape[1]:
-        print('The coefficient matrix should be square')
-        return None
+        raise Exception('The coefficient matrix should be square')
     for i in range(0,n-1):
         if A[i,i] == 0:
-            print('The matrix is not LU factorizable')
-            return
+            raise Exception('The matrix is not LU factorizable')
         # computation of the i-th Gauss vector that will be
         # part of the L matrix
         A[i+1:,i] = A[i+1:,i]/A[i,i]
@@ -39,21 +37,19 @@ if __name__ == "__main__":
                   '53 62 23 13 50;'
                   '61 61 54 40 29;'
                   '49 27  0 18 62', float)
-    print('A = ', A)
-    # LU factorization (deep-copy of A because we need it later)
+    print('A = \n', A)
+    # LU factorization (deep-copy of A because we need it or the "check")
     B = lu_factor(np.matrix(A))
-    print('B = ', B)
+    print('B = \n', B)
     # Extract lower part
     L = np.matrix(np.tril(B,-1) + np.identity(5))
-    print('L = ', L)
+    print('L = \n', L)
     # Extract upper part
     U = np.matrix(np.triu(B))
-    print('U = ', U)
+    print('U = \n', U)
     # Check
-    LU = L*U
-    print('LU = ', LU)
-    if np.allclose(A, LU) == False:
-        print('LU factorizzation test failure')
+    if np.allclose(A, L*U) == False:
+        raise Exception('LU factorizzation test failure')
 
     # TEST: System Resolution
     # Ax = LUx = b 
@@ -64,5 +60,5 @@ if __name__ == "__main__":
     x = triangular(U, k, 0)
     # Check
     if np.allclose(b, A*x) == False:
-        print('System resolution test failure')
+        raise Exception('System resolution test failure')
     
