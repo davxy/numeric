@@ -9,3 +9,8 @@ Linear Algebra
 - Triangular systems
 - LU Factorization
 - PA=LU Factorization
+
+Experiments
+-----------
+
+- Vandermonde matrix conditioning number graph
