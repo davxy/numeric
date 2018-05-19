@@ -1,11 +1,10 @@
-% LU factoriazation algorithm
-%
-% input:
-%   - A : the coefficient matrix
-% output:
-%   - A : the LU factorized matrix
-%
 function A = lu_factor(A)
+  % LU factoriazation algorithm
+  %
+  % input:
+  %   - A : the coefficient matrix
+  % output:
+  %   - A : the LU factorized matrix
   n = length(A);
   for i = 1:n-1
     % exit if at the i-th step the diagonal element is 0

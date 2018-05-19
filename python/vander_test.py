@@ -13,6 +13,8 @@ for n in axis:
         x[i] = float(i)/n
     V = np.vander(x);
     vcond.append(np.linalg.cond(V))
+plt.ylabel('log(cond)')
+plt.xlabel('order')
 plt.semilogy(axis, vcond)
 plt.show()
 
