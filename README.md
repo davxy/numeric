@@ -10,7 +10,14 @@ Linear Algebra
 - LU Factorization
 - PA=LU Factorization
 
+Polynomial Interpolation
+------------------------
+
+- Lagrange interpolation polynomial
+
 Experiments
 -----------
 
 - Vandermonde matrix conditioning number graph
+- Polynomial interpolation application: Toom-3 multiplication
+
