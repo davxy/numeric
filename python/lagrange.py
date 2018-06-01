@@ -20,7 +20,7 @@ def lagrange_eval(x, xpoints, ypoints):
             L[i,] = L[i,] * (x - xpoints[j])/(xpoints[i]-xpoints[j])
     y = np.zeros(np.shape(x),int)
     for i in range(n):
-        y = int(y + ypoints[i]*L[i,])
+        y = y + ypoints[i]*L[i,]
     return y
 
 def lagrange_poly(xpoints, ypoints):
