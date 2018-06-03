@@ -14,9 +14,10 @@ Polynomial Interpolation
 ------------------------
 
 - Lagrange interpolation polynomial
+- Chebyshev nodes
 
-Experiments
------------
+Misc Experiments
+----------------
 
 - Vandermonde matrix conditioning number graph
 - Polynomial interpolation application: Toom-3 multiplication
