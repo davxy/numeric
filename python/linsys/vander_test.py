@@ -16,5 +16,6 @@ for n in axis:
 plt.ylabel('log(cond)')
 plt.xlabel('order')
 plt.semilogy(axis, vcond)
+plt.grid(True)
 plt.show()
 
