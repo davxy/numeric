@@ -56,4 +56,4 @@ if __name__ == '__main__':
     plt.show()
 
     p = lagrange_poly(x, y)
-    pass
+
