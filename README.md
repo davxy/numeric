@@ -1,11 +1,19 @@
 Numerical Analysis
 ==================
 
+
 Finite Arithmetic
 -----------------
 
 - Machine precision computation
 - Numerical cancellation example
+
+
+Equation Roots
+--------------
+
+- Bisection method
+
 
 Linear Algebra
 --------------
@@ -16,6 +24,7 @@ Linear Algebra
 - LU Factorization
 - PA=LU Factorization
 
+
 Polynomial Interpolation
 ------------------------
 
@@ -25,6 +34,8 @@ Polynomial Interpolation
 - Lebesgue function and constant grow
 - Runge test
 - Polynomial interpolation application: Toom-3 multiplication
+- Cubic spline
+
 
 Misc
 ----
