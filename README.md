@@ -13,6 +13,8 @@ Equation Roots
 --------------
 
 - Bisection method
+- Newton-Raphson method
+- Newton-Raphson with Aitken acceleration
 
 
 Linear Algebra
