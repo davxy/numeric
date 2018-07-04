@@ -1,25 +1,24 @@
-function [x,steps] = newton(x,f,f1,tolx,imax,m)
+function [x,steps] = newton_chord(x,f,f1,tolx,imax)
     %
-    % Newton root finding method
+    % Newton root finding method  with Aitken acceleration
     %
     % Input:
-    %   - x    : first root approximation
-    %   - f    : function reference
-    %   - f1   : first derivative function reference
+    %   - x  : first root approximation
+    %   - f  : function reference
+    %   - f1 : first derivative function reference
     %   - tolx : max tolerance
     %   - imax : max iterations before stop trying
-    %   - m    : root multiplicity; if unknown set to 1.
     % Output:
     %   - x     : final root approximation
     %   - steps : required steps
     %
+    f1x = feval(f1, x);
     for i=1:imax
         fx = feval(f, x);
-        f1x = feval(f1, x);
         if (abs(fx) <= tolx*f1x)
             break;
         end
-        x = x - m*(fx/f1x);
+        x = x - (fx/f1x);
     end
     steps = i;
     return
