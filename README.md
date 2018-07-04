@@ -15,6 +15,8 @@ Equation Roots
 - Bisection method
 - Newton-Raphson method
 - Newton-Raphson with Aitken acceleration
+- Quasi-Newton Chords method
+- Quasi-Newton Secant method
 
 
 Linear Algebra
