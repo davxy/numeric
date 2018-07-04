@@ -1,12 +1,12 @@
 function [x,steps] = bisect(a,b,f,tolx)
     %
-    % Root finding Bisection method
+    % Bisection root finding method
     %
     % Input:
-	%   - a : confidence interval start
-	%   - b : confidence interval end
-	%   - f : function reference
-	%   - tolx : x axis max tolerance
+    %   - a : confidence interval start
+    %   - b : confidence interval end
+    %   - f : function reference
+    %   - tolx : x axis max tolerance
     % Output:
     %   - x : root approximation
     %   - steps : required steps
