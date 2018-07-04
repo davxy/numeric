@@ -1,5 +1,5 @@
 # Diagonal system solver
-def diag_solve(D, b):
+def diagonal(D, b):
     '''
     input:
       diag: vector with matrix diagonal elements
@@ -18,5 +18,5 @@ def diag_solve(D, b):
 if __name__ == '__main__':
     D = [3,5,7,3,1,7,9,10,1,2]
     b = [4,8,1,4,3,9,10,12,11,7]
-    x = diag_solve(D, b)
+    x = diagonal(D, b)
     print(x)
