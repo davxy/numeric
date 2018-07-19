@@ -1,43 +1,78 @@
+import numpy as np
+
 def rref(M):
-    if not M:
-        return None
-    R = M[:]
-    lead = 0
-    rows = len(R)
-    cols = len(R[0])
+    '''
+    Reduce a matrix to its row echelon form.
+
+    Input:
+        - M : input matrix
+    Output:
+        - R : matrix reduced row echelon form
+    '''
+    R = M[:]    # Deep copy the content
+    l = 0       # Lead value index
+    rows,cols = R.shape
     for r in range(rows):
-        if lead >= cols:
+        if l >= cols:
             return R
         # Search the row with "leftest" leading value
         i = r
-        while R[i][lead] == 0:
+        while R[i,l] == 0:
             i += 1
             if i == rows:
                 i = r
-                lead += 1
-                if cols == lead:
+                l += 1
+                if cols == l:
                     return R
         # Exchange rows
-        R[i],R[r] = R[r],R[i]
-        # Get leading value
-        lv = R[r][lead]
-        R[r] = [ v / float(lv) for v in R[r] ]
+        R[i,r] = R[r,i]
+        # Divide by leading value
+        R[r] /= R[r,l]
         # Elimination step
         for i in range(rows):
             if i != r:
-                lv = R[i][lead]
-                R[i] = [ iv - lv*rv for iv,rv in zip(R[i],R[r]) ]
-        lead += 1
+                R[i] = R[i] - R[i,l]*R[r]
+        l += 1
     return R
-
 
 
 if __name__ == "__main__":
     # Test if the reduced row echelon function
-    A = [[ 1, 2, -1, -4],
-         [ 2, 3, -1, -11],
-         [-2, 0, -3, 22],]
-    refA = rref(A)
-    print(refA)
+    A = np.matrix(' 1  2  -1;'
+                  ' 2  3  -1;'
+                  '-2, 0, -3',
+                  float);
+    b = np.matrix('-4; -11; 22')
 
+    #
+    # Find the inverse first
+    #
+
+    # Augmented matrix
+    M = np.column_stack((A,np.identity(3)))
+    # Transform in row echelon form
+    R = rref(M)
+    # Extract the inverse
+    A1 = R[:,3:6]
+    # Test inverse
+    if np.allclose(np.identity(3), A*A1) == False:
+        raise Exception('Inverse find failure')
+    # Test
+    x = A1*b
+    if np.allclose(b, A*x) == False:
+        raise Exception('System resolution test failure')
+
+    #
+    # Direct resolution
+    #
+
+    # Augmented matrix
+    M = np.column_stack((A,b))
+    # Transform in row echelon form
+    R = rref(M)
+    # Check the result
+    x = R[:,3]
+    # Check
+    if np.allclose(b, A*x) == False:
+        raise Exception('System resolution test failure')
 

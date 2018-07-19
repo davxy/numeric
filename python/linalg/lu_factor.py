@@ -52,7 +52,7 @@ if __name__ == "__main__":
         raise Exception('LU factorizzation test failure')
 
     # TEST: System Resolution
-    # Ax = LUx = b 
+    # Ax = LUx = b
     b = np.matrix('68; 9; 45; 43; 35')
     # Lk = b
     k = triangular(L, b, 1)
@@ -61,4 +61,4 @@ if __name__ == "__main__":
     # Check
     if np.allclose(b, A*x) == False:
         raise Exception('System resolution test failure')
-    
+
