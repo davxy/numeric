@@ -40,6 +40,12 @@ Polynomial Interpolation
 - Polynomial interpolation application: Toom-3 multiplication
 - Cubic spline
 
+Numerical differentiation
+-------------------------
+
+- Forward Finite differences (FFD)
+- Symmetric differential quotient (SDQ)
+- Conditioning experiment: h threshold
 
 Misc
 ----
