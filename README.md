@@ -1,6 +1,8 @@
 Numerical Analysis
 ==================
 
+Companion book [download](https://datawok.net/files/numeric.pdf)
+
 
 Finite Arithmetic
 -----------------
