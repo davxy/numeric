@@ -1,15 +1,33 @@
+/*
+ * Machine precision using arbitrary precision floats.
+ *
+ * Depends on GMP library. On debian
+ *
+ *   $ sudo apt install libgmp-dev
+ *
+ * To build
+ *
+ *  $ gcc epsilon.c -lgmp
+ */
+
 #include <gmp.h>
+#include <stdlib.h>
 #include <stdio.h>
 
-#define PREC    1024
-
-int main(void)
+int main(int argc, char *argv[])
 {
     mpf_t e, c, t, one;
+    int prec;
+
+    if (argc < 2) {
+        printf("Usage %s <precision-bits>\n", argv[0]);
+        return 0;
+    }
+    prec = atoi(argv[1]);
 
     printf("Default precision: %u\n", mpf_get_default_prec());
-    printf("Setting to %d\n", PREC);
-    mpf_set_default_prec(PREC);
+    printf("Setting precision: %u\n", prec);
+    mpf_set_default_prec(prec);
 
     mpf_inits(e, c, t, one, NULL);
     mpf_set_d(e, 1.0);
@@ -24,7 +42,6 @@ int main(void)
         mpf_mul(e, c, e);
     }
 
-    ////////////gmp_printf("%.100Ff\n", e);
     gmp_printf("%.100Fe\n", e);
     printf("\n");
 
