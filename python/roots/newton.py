@@ -42,14 +42,14 @@ def newton_aitken(x,f,f1,tolx,imax):
         f1x = f1(x)
         if (abs(fx) <= tolx*f1x):
             break
-        x1   = x-fx/f1x
+        x1 = x-fx/f1x
         # 2nd point using plain Newton
         fx  = f(x1)
         f1x = f1(x1)
-        x2  = x1-fx/f1x
         if (abs(fx) <= tolx*f1x):
             x = x1
             break
+        x2 = x1-fx/f1x
         # Acceleration step
         x = (x1*x1-x*x2)/(2*x1-x2-x)
     return (x,i+1)

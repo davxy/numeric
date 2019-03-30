@@ -19,15 +19,15 @@ function [x,steps] = newton_aitken(x,f,f1,tolx,imax)
         if (abs(fx) <= tolx*f1x)
             break;
         end
-        x1  = x-fx/f1x;
+        x1 = x-fx/f1x;
         % The second point is computed using plain Newton
         fx  = f(x1);
         f1x = f1(x1);
-        x2  = x1-fx/f1x;
         if (abs(fx) <= tolx*f1x)
             x = x1;
             break;
         end
+        x2 = x1-fx/f1x;
         # Aitken acceleration
         x = (x1*x1-x*x2)/(2*x1-x2-x);
     end
