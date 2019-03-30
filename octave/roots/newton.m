@@ -16,7 +16,7 @@ function [x,steps] = newton(x,f,f1,tolx,imax,m)
     for i=1:imax
         fx = feval(f, x);
         f1x = feval(f1, x);
-        if (abs(fx) <= tolx*f1x)
+        if (abs(fx) <= tolx*abs(f1x))
             break;
         end
         x = x - m*(fx/f1x);

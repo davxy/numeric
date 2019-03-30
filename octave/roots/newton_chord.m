@@ -15,7 +15,7 @@ function [x,steps] = newton_chord(x,f,f1,tolx,imax)
     f1x = feval(f1, x);
     for i=1:imax
         fx = feval(f, x);
-        if (abs(fx) <= tolx*f1x)
+        if (abs(fx) <= tolx*abs(f1x))
             break;
         end
         x = x - (fx/f1x);

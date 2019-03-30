@@ -16,14 +16,14 @@ function [x,steps] = newton_aitken(x,f,f1,tolx,imax)
         % The first point is computed using plain Newton
         fx  = f(x);
         f1x = f1(x);
-        if (abs(fx) <= tolx*f1x)
+        if (abs(fx) <= tolx*abs(f1x))
             break;
         end
         x1 = x-fx/f1x;
         % The second point is computed using plain Newton
         fx  = f(x1);
         f1x = f1(x1);
-        if (abs(fx) <= tolx*f1x)
+        if (abs(fx) <= tolx*abs(f1x))
             x = x1;
             break;
         end

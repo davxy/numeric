@@ -16,7 +16,7 @@ def newton(x,f,f1,tolx,imax,m):
     for i in range(0,imax):
         fx  = f(x)
         f1x = f1(x)
-        if (abs(fx) <= tolx*f1x):
+        if (abs(fx) <= tolx*abs(f1x)):
             break
         x = x - m*fx/f1x
     return (x,i+1)
@@ -40,13 +40,13 @@ def newton_aitken(x,f,f1,tolx,imax):
         # 1st point using plain Newton
         fx  = f(x)
         f1x = f1(x)
-        if (abs(fx) <= tolx*f1x):
+        if (abs(fx) <= tolx*abs(f1x)):
             break
         x1 = x-fx/f1x
         # 2nd point using plain Newton
         fx  = f(x1)
         f1x = f1(x1)
-        if (abs(fx) <= tolx*f1x):
+        if (abs(fx) <= tolx*abs(f1x)):
             x = x1
             break
         x2 = x1-fx/f1x
@@ -72,7 +72,7 @@ def newton_chord(x,f,f1,tolx,imax):
     f1x = f1(x)
     for i in range(0,imax):
         fx  = f(x)
-        if (abs(fx) <= tolx*f1x):
+        if (abs(fx) <= tolx*abs(f1x)):
             break
         x = x - fx/f1x
     return (x,i+1)
@@ -100,7 +100,7 @@ def newton_secant(x,f,f1,tolx,imax):
     for i in range(0,imax):
         fx   = f(x)
         f1x  = f1(x)
-        if (abs(fx) <= tolx*f1x or fx == fx0):
+        if (abs(fx) <= tolx*abs(f1x) or fx == fx0):
             break
         tmp = x
         x = x - fx*(x-x0)/(fx-fx0)

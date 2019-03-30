@@ -20,7 +20,7 @@ function [x,steps] = newton_secant(x,f,f1,tolx,imax)
     for i=1:imax
         fx  = f(x);
         f1x = f1(x);
-        if (abs(fx) <= tolx*f1x || fx == fx0)
+        if (abs(fx) <= tolx*abs(f1x) || fx == fx0)
             break;
         end
         tmp = x;
