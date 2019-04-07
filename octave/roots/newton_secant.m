@@ -29,4 +29,4 @@ function [x,steps] = newton_secant(x,f,f1,tolx,imax)
         fx0 = fx;
     end
     steps = i;
-    return
+end

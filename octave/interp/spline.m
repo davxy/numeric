@@ -21,8 +21,7 @@ function yq = spline(x,y,xq)
     for i=1:length(xq)
         yq(i) = spline_eval(a,b,c,d,x,xq(i));
     end
-
-function v=to_col(v)
+end
 
 
 function yq=spline_eval(a,b,c,d,x,xq)
@@ -33,6 +32,7 @@ function yq=spline_eval(a,b,c,d,x,xq)
     end
     % xq is between x(i) and x(i+1)
     yq = a(i)*(xq-x(i))^3 + b(i)*(xq-x(i))^2 + c(i)*(xq-x(i)) + d(i);
+end
 
 
 function T = build_tridiag(h, n)
@@ -45,6 +45,7 @@ function T = build_tridiag(h, n)
         T(i+1,i) = h(i);
         T(i,i+1) = h(i+1);
     end
+end
 
 function [a,b,c,d] = spline_coef(x,y)
     % Helper function returning a list of coefficients vectors.
@@ -83,3 +84,4 @@ function [a,b,c,d] = spline_coef(x,y)
     c = dd - h.*(2*m(1:end-1) + m(2:end))/6;
     b = m/2;
     a = (m(2:end)-m(1:end-1))./(6*h);
+end

@@ -32,4 +32,4 @@ function [x,steps] = newton_aitken(x,f,f1,tolx,imax)
         x = (x1*x1-x*x2)/(2*x1-x2-x);
     end
     steps = i;
-    return
+end

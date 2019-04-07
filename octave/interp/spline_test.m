@@ -19,7 +19,10 @@ end
 % interpolate to get yy values
 yy = spline(x,y,xx);
 
-%yy = lagrange(xx,x,y);
+% yy = lagrange(xx,x,y);
 % pre-computed y values are plotted with 'o',
 % interpolated y values are plotted with '.'
 plot(xx,yy,'+',xx,ff,x,y,'o');
+
+% Wait for input
+pause;

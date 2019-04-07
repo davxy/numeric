@@ -21,4 +21,4 @@ function [x,steps] = newton_chord(x,f,f1,tolx,imax)
         x = x - (fx/f1x);
     end
     steps = i;
-    return
+end

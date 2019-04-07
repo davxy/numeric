@@ -27,3 +27,4 @@ function [x,steps] = bisect(a,b,f,tolx)
         end         
     end
     steps = i;
+end

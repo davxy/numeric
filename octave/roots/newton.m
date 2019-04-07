@@ -22,4 +22,4 @@ function [x,steps] = newton(x,f,f1,tolx,imax,m)
         x = x - m*(fx/f1x);
     end
     steps = i;
-    return
+end

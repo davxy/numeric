@@ -15,4 +15,3 @@ function D = divdiff(x, y)
         D = (divdiff(x(2:n),y(2:n)) - divdiff(x(1:n-1),y(1:n-1))) / (x(n)-x(1));
     end
 end
-

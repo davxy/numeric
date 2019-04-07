@@ -16,7 +16,7 @@ U = triu(B)
 % Check
 LU = L*U
 if allclose(A(p,:), LU, 0.1) == 0
-  error('LU factorizzation test failure')
+    error('LU factorizzation test failure')
 end
 
 % TEST: System Resolution
@@ -29,5 +29,5 @@ k = triangular(L, b(p), 1)
 x = triangular(U, k, 0)
 % Check
 if allclose(b, A*x, 0.1) == 0
-  error('Lower triangular test failure')
+    error('Lower triangular test failure')
 end

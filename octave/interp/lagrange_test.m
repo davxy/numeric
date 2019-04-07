@@ -9,5 +9,6 @@ xx = linspace(0,100);
 yy = lagrange(xx,x,y);
 % pre-computed y values are plotted with 'o',
 % interpolated y values are plotted with '.'
-plot(x,y,'o',xx,yy,'.')
+plot(x,y,'o',xx,yy,'.');
+% Wait for input
 pause;

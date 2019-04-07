@@ -12,7 +12,7 @@ b = [ 68; 9; 45; 43; 35 ]
 x = triangular(A, b, 1)
 % Check
 if allclose(b, A*x, 0.1) == 0
-  error('Lower triangular test failure')
+    error('Lower triangular test failure')
 end
 
 % Upper triangular test

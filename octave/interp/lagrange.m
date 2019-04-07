@@ -27,3 +27,4 @@ function y=lagrange(x,xpoints,ypoints)
    for i=1:n
       y=y+ypoints(i)*L(i,:);
    end
+end

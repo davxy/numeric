@@ -24,20 +24,20 @@
 %
 
 function test = isclose(a,b,tol)
-  % get length of input matrix a
-  [nr,nc] = size(a);
+    % get length of input matrix a
+    [nr,nc] = size(a);
 
-% check input for consistency
-  if ~all(size(a) == size(b))
-    if all(size(b) == [1 1])
-      % convert scalar value b to a matrix of size(a)
-      b = b*ones(size(a));
-    else
-      disp('error: input arguments are inconsistent (isalmost.m)')
-      disp('(b) must be a matrix of same size as (a) or a single value')
+    % check input for consistency
+    if ~all(size(a) == size(b))
+        if all(size(b) == [1 1])
+            % convert scalar value b to a matrix of size(a)
+            b = b*ones(size(a));
+        else
+            disp('error: input arguments are inconsistent (isalmost.m)')
+            disp('(b) must be a matrix of same size as (a) or a single value')
+        end
     end
-  end
-  one = ones(size(b));
-  % perform test
-  test = (a <= b+tol*one)&(a >= b-tol*one);
- 
+    one = ones(size(b));
+    % perform test
+    test = (a <= b+tol*one)&(a >= b-tol*one);
+end 

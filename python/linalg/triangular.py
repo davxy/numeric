@@ -26,6 +26,7 @@ def triangular(A, b, typ):
     return x
 
 
+# Usage example
 if __name__ == "__main__":
     # Lower triangular matrix
     A = np.matrix('12  0  0  0  0;'
