@@ -4,15 +4,16 @@ Numerical Analysis
 Companion book [download](https://datawok.net/files/2019/numeric.pdf)
 
 
-Finite Arithmetic
------------------
+Algorithms
+----------
+
+### Finite Arithmetic
 
 - Machine precision computation
 - Numerical cancellation example
 
 
-Equation Roots
---------------
+### Equation Roots
 
 - Bisection method
 - Newton-Raphson method
@@ -21,8 +22,7 @@ Equation Roots
 - Quasi-Newton Secant method
 
 
-Linear Algebra
---------------
+### Linear Algebra
 
 - Reduced Row Echelon Form
 - Diagonal systems
@@ -31,8 +31,7 @@ Linear Algebra
 - PA=LU Factorization
 
 
-Polynomial Interpolation
-------------------------
+### Polynomial Interpolation
 
 - Lagrange interpolation polynomial
 - Chebyshev nodes
@@ -42,15 +41,37 @@ Polynomial Interpolation
 - Polynomial interpolation application: Toom-3 multiplication
 - Cubic spline
 
-Numerical differentiation
--------------------------
+### Numerical differentiation
 
 - Forward Finite differences (FFD)
 - Symmetric differential quotient (SDQ)
 - Conditioning experiment: h threshold
 
-Misc
-----
+### Misc
 
 - Vandermonde matrix conditioning number graph
+
+
+Dependencies
+------------
+
+### Python
+
+- Python3
+- NumPy (http://numpy.org)
+- Matplotlib (https://matplotlib.org/)
+
+Python3 and package manager system-wide installation
+
+    $ sudo apt install python3 pip3
+
+Python3 packages installation (user only)
+
+    $ pip3 install numpy matplotlib
+
+### Octave
+
+All in one octave package installation
+
+    $ sudo apt install octave
 
