@@ -34,16 +34,16 @@ def run_test(a, b, xpoints):
             fontsize=18, transform=plt.gcf().transFigure)
     ax.grid(True)
 
-def equis_nodes(a, b, n):
+def equid_nodes(a, b, n):
     return np.linspace(a, b, n)
 
 def cheby_nodes(a, b, n):
     xx = [math.cos((2*x+1)*math.pi/(2*n)) for x in range(0,n)]
     return [ (a+b)/2.0 + (b-a)/2.0 * x for x in xx ]
 
-# Test n equispaced points
-def equis_test(a, b, n):
-    xpoints = equis_nodes(a, b, n)
+# Test n equidpaced points
+def equid_test(a, b, n):
+    xpoints = equid_nodes(a, b, n)
     run_test(a, b, xpoints)
 
 # Test n Chebyshev nodes
@@ -54,7 +54,7 @@ def cheby_test(a, b, n):
 # Self test
 if __name__ == '__main__':
     a,b,n = -1.0,1.0,10
-    equis_test(a,b,n)
+    equid_test(a,b,n)
     cheby_test(a,b,n)
     plt.show()
 
