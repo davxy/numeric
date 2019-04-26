@@ -12,6 +12,7 @@ xx = np.linspace(-1, 1, 100)
 yy = [ c(x) for x in xx ]
 plt.plot(xx, yy)
 
+# Plot the polynomial roots (o)
 xi = [ math.cos((2*x+1)*math.pi/(2*deg)) for x in range(0, deg) ]
 plt.plot(xi,list(np.zeros(len(xi))),'o')
 
@@ -23,4 +24,3 @@ for x in xi:
 
 plt.grid(True)
 plt.show()
-
