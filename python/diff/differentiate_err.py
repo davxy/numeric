@@ -7,7 +7,7 @@ errors magnitude are compared for a known function on a fixed point x0.
 The test also shows that, after a certain threshold, both the methods are 
 heavily affected by numerical cancellation.
 
-Note he SDQ method smaller error.
+Note that the SDQ method produces smaller errors.
 '''
 
 import numpy as np
@@ -41,4 +41,3 @@ plt.xlabel('h')
 plt.ylabel('error')
 plt.legend(['ffd','sdq'])
 plt.show()
-    

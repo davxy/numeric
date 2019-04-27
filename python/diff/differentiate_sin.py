@@ -22,7 +22,7 @@ The empirical results are compatible with the theoretical ones.
 import numpy as np
 import matplotlib.pyplot as plt
 
-N = 20
+N = 50
 x = np.random.uniform(-np.pi, np.pi, N)
 x = np.sort(x)
 fx = np.sin(x)
@@ -37,7 +37,7 @@ print('Dx\tFFD\tErr')
 for a,b,c in zip(dx, ffd, err):
     print('{:.9f}\t{:.9f}\t{:.9f}'.format(a, b, c))
 
-plt.text(2.2, 0.6, 'N = 30')
+plt.text(2.2, 0.6, 'N = {}'.format(N))
 plt.plot(x, dx)
 plt.plot(x, ffd)
 plt.legend(['dx','ffd'])
