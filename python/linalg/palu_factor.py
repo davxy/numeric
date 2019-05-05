@@ -1,7 +1,7 @@
 # PA=LU factorization algorithm
 
 import numpy as np
-from triangular import triangular
+from linalg.triangular import triangular
 
 
 def palu_factor(A):

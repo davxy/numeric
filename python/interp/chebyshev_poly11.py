@@ -1,7 +1,7 @@
+import math
 import numpy as np
 import matplotlib.pyplot as plt
-from numpy.polynomial.chebyshev import Chebyshev, cheb2poly
-import math
+from numpy.polynomial.chebyshev import Chebyshev
 
 # Get the polynomial
 deg = 11

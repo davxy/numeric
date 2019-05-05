@@ -1,3 +1,7 @@
+# Matrix multiplication routine.
+# Implemented for reference only, internally we're going to use
+# the Numpy built-in matrix multiplier.
+
 def multiply(A, B):
     R = [ [] for _ in range(len(A)) ]
     for i in range(len(A)):  #loops through rows

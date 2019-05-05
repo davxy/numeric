@@ -1,16 +1,18 @@
 # LU factorization algorithm
 
 import numpy as np
-from triangular import triangular
+from linalg.triangular import triangular
 
 def lu_factor(A):
     '''
-    input:
-        - A: a numpy coefficient square matrix
-    output:
-        - A: LU factorized matrix with the upper trianguar part
-             containing U and the lower trianguar part (diagonal
-             excluded) containing L.
+    LU Factorization algorithm
+
+    Input:
+      - A: a numpy coefficient square matrix
+    Output:
+      - A: LU factorized matrix with the upper trianguar part
+           containing U and the lower trianguar part (diagonal
+           excluded) containing L.
     '''
     # Get the matrix size
     n = A.shape[0]

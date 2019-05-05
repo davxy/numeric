@@ -1,14 +1,13 @@
 import numpy as np
-from rref import rref
-from diag import diag_solve
-
+from linalg.rref import rref
+from linalg.diagonal import diagonal
 
 def linsolve_diag(M, b):
     rows = len(M)
     d = []
     for i in range(rows):
         d.append(M[i][i])
-    return diag_solve(d, b)
+    return diagonal(d, b)
 
 def linsolve_rref(M, b):
     rows = len(M)
