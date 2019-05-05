@@ -1,5 +1,5 @@
 function A = lu_factor(A)
-    % LU factoriazation algorithm
+    % LU factorization algorithm
     %
     % input:
     %   - A : the coefficient matrix
