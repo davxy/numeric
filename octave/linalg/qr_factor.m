@@ -12,9 +12,8 @@ function [ Q R ] = qr_factor(A)
     Q = eye(m);
     for i = 1:n
         v = [1; R(i+1:m,i)];
-        Hi = eye(m-i+1) - 2*(v*v')/(v'*v);
         H = eye(m);
-        H(i:m,i:m) = Hi;
+        H(i:m,i:m) = eye(m-i+1) - 2*(v*v')/(v'*v);
         Q = Q*H;
         R(i+1:m,i) = zeros(m-i,1);
     end
