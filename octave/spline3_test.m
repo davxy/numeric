@@ -17,7 +17,7 @@ for i=1:nq
 end
 
 % interpolate to get yy values
-yy = spline(x,y,xx);
+yy = spline3(x,y,xx);
 
 % yy = lagrange(xx,x,y);
 % pre-computed y values are plotted with 'o',

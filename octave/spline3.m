@@ -1,4 +1,4 @@
-function yq = spline(x,y,xq)
+function yq = spline3(x,y,xq)
     %
     % Cubic Spline interpolation method.
     %
@@ -9,12 +9,8 @@ function yq = spline(x,y,xq)
     % Output:
     %   - yq : interpolation result for query points
     %
-    if isrow(x)
-        x=x';
-    end
-    if isrow(y)
-        y=y';
-    end
+    x = x(:);
+    y = y(:);
     [a,b,c,d] = spline_coef(x,y);
     nx = length(x);
     n = length(xq);
