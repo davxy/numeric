@@ -20,7 +20,7 @@ function yq = spline3(x,y,xq)
 end
 
 
-function yq=spline_eval(a,b,c,d,x,xq)
+function yq = spline_eval(a,b,c,d,x,xq)
     n = length(x);
     i=1;
     while (i <= n-1 & xq > x(i+1))
