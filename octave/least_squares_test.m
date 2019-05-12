@@ -1,12 +1,12 @@
-% interpolation interval
+% Interpolation interval
 xmin = -pi
 xmax =  pi
-% function
+% Function
 f = @(x) sin(x)
 %f = @(x) 4*x
-% number of samples
+% Number of samples
 s = 30
-% interpolating polynomial degree
+% Interpolating polynomial degree
 d = 3
 
 % Sample points

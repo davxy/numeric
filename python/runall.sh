@@ -30,7 +30,7 @@ $RUN vander_test.py
 $RUN lagrange_test.py
 $RUN spline1_test.py
 $RUN spline3_test.py
-#$RUN least_squares_test.py
+$RUN least_squares_test.py
 $RUN chebyshev_test.py
 $RUN chebyshev_test11.py
 $RUN runge_test.py
