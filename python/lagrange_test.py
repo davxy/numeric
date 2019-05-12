@@ -4,12 +4,13 @@ from lagrange import lagrange_eval
 import numpy as np
 import matplotlib.pyplot as plt
 
-x = np.array([1, 2, 5])
+# Three points are sufficient to interpolate a polynomial of degree 2
+x = np.array([15, 42, 30])
 y = np.square(x)
 X = list(range(0,100,1))
 Y = lagrange_eval(X, x, y)
 
 # Plot the result
-plt.scatter(X, Y, linewidth=0.02)
-plt.plot(x, y)
+plt.scatter(x, y)
+plt.plot(X, Y)
 plt.show()
