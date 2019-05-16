@@ -36,7 +36,7 @@ for n in range(minpoints, maxpoints+1, 3):
     ax.plot(xx, yy)
     xpoints = get_nodes(ibeg, iend, n)
     ypoints = [ func(x) for x in xpoints ]
-    yy1 = lagrange_eval(xx, xpoints, ypoints)
+    yy1 = lagrange_eval(xpoints, ypoints, xx)
     ax.plot(xx, yy1)
     ax.scatter(xpoints, ypoints, s=15, color='black')
     ax.text(0.2, 0.9, 'n={}'.format(n),

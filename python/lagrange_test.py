@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 x = np.array([15, 42, 30])
 y = np.square(x)
 X = list(range(0,100,1))
-Y = lagrange_eval(X, x, y)
+Y = lagrange_eval(x, y, X)
 
 # Plot the result
 plt.scatter(x, y)

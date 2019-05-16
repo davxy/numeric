@@ -1,30 +1,26 @@
-function y=lagrange(x,xpoints,ypoints)
+function Y = lagrange(x, y, X)
     %
     % Lagrange interpolation method.
     %
     % Input:
-    %   - x : points to evaluate x axis
-    %   - xpoints: precomputed points x axis values
-    %   - ypoints: precomputed points y axis values
+    %   - x : precomputed points x axis values
+    %   - y : precomputed points y axis values
+    %   - X : query points x axis
     % Output:
-    %   - y : interpolated points y axis
+    %   - Y : query points y axis (interpolation results)
     %
-    % Assumes that all the input values are row vectors.
-    %
-    if (size(xpoints,2) != size(ypoints,2))
-        error('xpoints and ypoints must have the same number of elements')
+    if (size(x,2) != size(y,2))
+        error('x and y must have the same number of elements')
     end
-    n = size(xpoints,2);
-    L = ones(n,size(x,2));
-    for i=1:n
-        for j=1:n
-            if (i!=j)
-                L(i,:)=L(i,:).*(x-xpoints(j))/(xpoints(i)-xpoints(j));
+    n = size(x, 2);
+    Y = zeros(1, size(X, 2));
+    for i = 1:n
+        L = ones(1, size(X,2));
+        for j = 1:n
+            if (i != j)
+                L = L .* (X-x(j))/(x(i)-x(j));
             end
         end
-   end
-   y=zeros(n,size(x,2));
-   for i=1:n
-      y=y+ypoints(i)*L(i,:);
+        Y = Y + y(i)*L
    end
 end

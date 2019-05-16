@@ -3,11 +3,11 @@ function Y = spline3(x, y, X)
     % Cubic Spline interpolation method.
     %
     % Input:
-    %   - x  : precomputed points x axis values
-    %   - y  : precomputed points y axis values
-    %   - xq : query points x axis
+    %   - x : precomputed points x axis values
+    %   - y : precomputed points y axis values
+    %   - X : query points x axis
     % Output:
-    %   - yq : interpolation result for query points
+    %   - Y : query points y axis (interpolation results)
     %
     x = x(:);
     y = y(:);
