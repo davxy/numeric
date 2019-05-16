@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 # Three points are sufficient to interpolate a polynomial of degree 2
 x = np.array([15, 42, 30])
 y = np.square(x)
-X = list(range(0,100,1))
+X = np.linspace(0, 100, 100)
 Y = lagrange_eval(x, y, X)
 
 # Plot the result
