@@ -12,17 +12,16 @@ def lagrange(x, y, X):
     Output:
       - Y : query points y axis (interpolation results)
     '''
-    n = np.shape(x)[0]
-    L = np.ones((n,np.shape(X)[0]))
+    n = len(x)
+    Y = np.zeros(len(X))
     for i in range(n):
+        L = np.ones(len(X))
         for j in range(n):
-            if i == j:
-                continue
-            L[i,] = L[i,] * (X - x[j])/(x[i]-x[j])
-    Y = np.zeros(np.shape(X),int)
-    for i in range(n):
-        Y = Y + y[i]*L[i,]
+            if i != j:
+                L *= (X - x[j])/(x[i]-x[j])
+        Y += y[i]*L
     return Y
+
 
 def lagrange_poly(x, y):
     '''
@@ -39,8 +38,7 @@ def lagrange_poly(x, y):
     for j in range(n):
         pt = np.poly1d(y[j])
         for k in range(n):
-            if k == j:
-                continue
-            pt *= np.poly1d([1.0, -x[k]])/(x[j]-x[k])
+            if k != j:
+                pt *= np.poly1d([1.0, -x[k]])/(x[j]-x[k])
         p += pt
     return p

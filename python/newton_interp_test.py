@@ -1,14 +1,13 @@
-# Lagrange interpolating polynomial test
+# Newton interpolating polynomial test
 
-from lagrange import lagrange
 import numpy as np
+from newton_interp import newton_interp
 import matplotlib.pyplot as plt
 
-# Three points are sufficient to interpolate a polynomial of degree 2
 x = np.array([15, 42, 30])
 y = np.square(x)
 X = np.linspace(0, 100, 100)
-Y = lagrange(x, y, X)
+Y = newton_interp(x, y, X)
 
 # Plot the result
 plt.scatter(x, y)
