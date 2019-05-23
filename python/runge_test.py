@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import math
-from lagrange import lagrange_eval
+from lagrange import lagrange
 from lebesgue import lebesgue_const
 
 # Runge example function
@@ -36,7 +36,7 @@ for n in range(minpoints, maxpoints+1, 3):
     ax.plot(xx, yy)
     xpoints = get_nodes(ibeg, iend, n)
     ypoints = [ func(x) for x in xpoints ]
-    yy1 = lagrange_eval(xpoints, ypoints, xx)
+    yy1 = lagrange(xpoints, ypoints, xx)
     ax.plot(xx, yy1)
     ax.scatter(xpoints, ypoints, s=15, color='black')
     ax.text(0.2, 0.9, 'n={}'.format(n),

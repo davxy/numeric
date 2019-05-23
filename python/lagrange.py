@@ -2,7 +2,7 @@
 
 import numpy as np
 
-def lagrange_eval(x, y, X):
+def lagrange(x, y, X):
     '''
     Lagrange interpolation method
     Input:
