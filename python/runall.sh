@@ -40,5 +40,6 @@ $RUN lebesgue.py
 $RUN toom3.py
 
 # Differentiation
-$RUN differentiate_sin.py
-$RUN differentiate_err.py
+$RUN diff_ffd_test.py
+$RUN diff_sdq_test.py
+$RUN diff_err.py

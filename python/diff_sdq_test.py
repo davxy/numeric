@@ -15,28 +15,34 @@
 # in the SDQ method, the error becomes smaller earlier as well: for h~10^-5,
 # the SDQ error ~10^12  while the FFD error is ~10^-6.
 #
-#The empirical results are compatible with the theoretical ones.
+# The empirical results are compatible with the theoretical ones.
 
 import numpy as np
 import matplotlib.pyplot as plt
 
-N = 50
-x = np.random.uniform(-np.pi, np.pi, N)
-x = np.sort(x)
-fx = np.sin(x)
-dx = np.cos(x)
+N = 20
+x = np.linspace(-np.pi, np.pi, N)
+#fx = np.sin(x)
+#dx = np.cos(x)
+fx = x**6 - 2*x**5 + x**3 - x**2 + 3*x + 1
+dx = 6*x**5 - 10*x**4 + 3*x**2 - 2*x + 3
+h = x[1] - x[0]
+print("h = ", h);
 
-ffd = np.diff(fx)/np.diff(x)
-ffd = np.concatenate((ffd,[ffd[len(ffd)-1]]))
+sdq = np.zeros(N)
+sdq[0]   = (fx[1] - fx[0]) / h
+sdq[N-1] = (fx[N-1] - fx[N-2]) / h
+for i in range(1, N-1):
+    sdq[i] = (fx[i+1] - fx[i-1]) / (2*h)
 
-err = abs(dx - ffd)
+err = abs(dx - sdq)
 
-print('| Dx           | FFD          | Err')
-for a,b,c in zip(dx, ffd, err):
+print('| Dx           | SDQ          | Err')
+for a,b,c in zip(dx, sdq, err):
     print('| {:.9f} | {:.9f} | {:.9f}'.format(a, b, c))
 
 plt.text(2.2, 0.6, 'N = {}'.format(N))
 plt.plot(x, dx)
-plt.plot(x, ffd)
-plt.legend(['dx','ffd'])
+plt.plot(x, sdq)
+plt.legend(['dx','sdq'])
 plt.show()
