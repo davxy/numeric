@@ -1,14 +1,12 @@
-'''
-Numerical differentiation error test.
-
-Finite Forward Difference (FFD) and Symmetric Differential Quotient (SDQ)
-errors magnitude are compared for a known function on a fixed point x0.
-
-The test also shows that, after a certain threshold, both the methods are 
-heavily affected by numerical cancellation.
-
-Note that the SDQ method produces smaller errors.
-'''
+# Numerical differentiation error test.
+# 
+# Finite Forward Difference (FFD) and Symmetric Differential Quotient (SDQ)
+# errors magnitude are compared for a known function on a fixed point x0.
+# 
+# The test also shows that, after a certain threshold, both the methods are 
+# heavily affected by numerical cancellation.
+# 
+# Note that the SDQ method produces smaller errors.
 
 import numpy as np
 import matplotlib.pyplot as plt

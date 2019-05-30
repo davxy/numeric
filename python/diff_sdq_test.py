@@ -1,31 +1,17 @@
-# Given an ordered set of randomly distributed nodes and the y-axis value
-# relative to each node (e.g. the result of a non-periodic sampling) we want
-# to estimate the derivative at each of the sampling points using the FFD
+# Given an ordered set of uniformly distributed nodes and the y-axis value
+# relative to each node (e.g. the result of a periodic sampling) we want
+# to estimate the derivative at each of the sampling points using the SDQ
 # method.
-#
-# In this experiment, the SDQ method is not an option since the nodes are not
-# equally spaced.
-#
-# The resulting graph clearly shows that, before a certain threshold is reached,
-# the error diminishes regularly as the value of h gets smaller. From the
-# threshold point (~ 10^-5 for the SDQ and ~ 10^-8 for the FFD), as h gets even
-# smaller, the error starts to grow in a fuzzy way because of cancellation.
-#
-# Also note that, even though cancellation issues starts to manifest earlier
-# in the SDQ method, the error becomes smaller earlier as well: for h~10^-5,
-# the SDQ error ~10^12  while the FFD error is ~10^-6.
-#
-# The empirical results are compatible with the theoretical ones.
 
 import numpy as np
 import matplotlib.pyplot as plt
 
 N = 20
 x = np.linspace(-np.pi, np.pi, N)
-#fx = np.sin(x)
-#dx = np.cos(x)
-fx = x**6 - 2*x**5 + x**3 - x**2 + 3*x + 1
-dx = 6*x**5 - 10*x**4 + 3*x**2 - 2*x + 3
+fx = np.sin(x)
+dx = np.cos(x)
+#fx = x**6 - 2*x**5 + x**3 - x**2 + 3*x + 1
+#dx = 6*x**5 - 10*x**4 + 3*x**2 - 2*x + 3
 h = x[1] - x[0]
 print("h = ", h);
 
