@@ -1,4 +1,4 @@
-function [x,steps] = bisect(a,b,f,tolx)
+function [x, steps] = bisect(a, b, f, tolx)
     %
     % Bisection root finding method
     %
