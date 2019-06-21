@@ -15,21 +15,21 @@ Y = zeros(1, N);
 for i = 1:N
     Y(i) = f(X(i));
 endfor
-plot(X, Y, 'b');
+%plot(X, Y, 'b');
 X = linspace(a, b, n);
 Y = zeros(1,n);
 for i = 1:n
     Y(i) = f(X(i));
-    plot([X(i) X(i)], [0 Y(i)], '--k');
+    %plot([X(i) X(i)], [0 Y(i)], '--k');
 endfor
-plot(X, Y, '--k')
+%plot(X, Y, '--k')
 hold off
 
-% Trapezoid rule with relative error
+% Trapezoid method with relative error
 I = quad_trapezoid(a, b, f, n-1)
 E = abs(Iexp - I)/Iexp   % relative error
 
-% 1/3 Simpson's rule with relative error
+% 1/3 Simpson's method with relative error
 I = quad_simpson(a, b, f, n-1)
 E = abs(Iexp - I)/Iexp
 
