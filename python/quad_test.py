@@ -1,6 +1,6 @@
 # TEST: Numeric Integration using Trapezoidal and Simpson methods
 
-from quadrature import quad_trapez, quad_simpson
+from quad import quad_trapezoid, quad_simpson
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -14,7 +14,7 @@ for n in range(2, 11, 2):
     print('-----------------------------------')
     print('n = {}'.format(n))
     # Trapezoid method with relative error
-    I = quad_trapez(a, b, f, n-1)
+    I = quad_trapezoid(a, b, f, n-1)
     E = abs(I - Iexp) / Iexp
     print("> Trapezoid I = {}, E = {}".format(I, E));
     # Simpson's method with relative error
@@ -33,5 +33,3 @@ for x in X:
 plt.plot(X, f(X), color='black', linestyle='dashed', linewidth=1)
 plt.grid(True)
 plt.show()
-
-pass
