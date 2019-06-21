@@ -1,3 +1,0 @@
-Modules self-test scripts shall be run using the following syntax:
-
-$ python3 -m linalg.lu_factor

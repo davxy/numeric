@@ -13,12 +13,10 @@ function I = quad_simpson(a, b, f, n)
     end
     x = a;
     h = (b - a)/n;
-    s = f(x);
-    s = s + 4*f(x+h/2);
+    s = f(x) + 4*f(x+h/2);
     for i = 1 : n-1
         x = x + h;
-        s = s + 2*f(x);
-        s = s + 4*f(x+h/2);
+        s = s + 2*f(x) + 4*f(x+h/2);
     end
     s = s + f(b);
     I = h*s/6;

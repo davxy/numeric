@@ -1,4 +1,4 @@
-% TEST: Numeric Integration using Trapezoidal and 1/3 Simpson methods
+% TEST: Numeric Integration using Trapezoidal and Simpson methods
 
 f = inline('0.2 + 25*x - 200*x^2 + 675*x^3 - 900*x^4 + 400*x^5');
 a = 0.0;
@@ -18,29 +18,29 @@ for n = 2:2:10
     % Trapezoid method with relative error
     I = quad_trapezoid(a, b, f, n-1);
     E = abs(Iexp - I)/Iexp;
-    printf('> Trapezoid I=%f, E=%f\n', I, E);
+    printf('> Trapezoid : I = %f, E = %f\n', I, E);
 
     % Simpson's method with relative error
     I = quad_simpson(a, b, f, n-1);
     E = abs(Iexp - I)/Iexp;
-    printf('> Simpson   I=%f, E=%f\n', I, E);
+    printf('> Simpson   : I = %f, E = %f\n', I, E);
 end
 
-% Plot using the last aproximation number of nodes
-N = 1000;    % Number of points for the smooth plot
+% Plot using the last approximation number of nodes
+N = 1000;    % Number of points for smooth function plot
 hold on
 X = linspace(a, b, N);
 Y = zeros(1, N);
 for i = 1:N
     Y(i) = f(X(i));
-endfor
+end
 plot(X, Y, 'b');
 X = linspace(a, b, n);
 Y = zeros(1,n);
 for i = 1:n
     Y(i) = f(X(i));
     plot([X(i) X(i)], [0 Y(i)], '--k');
-endfor
+end
 plot(X, Y, '--k')
 hold off
 
