@@ -1,4 +1,4 @@
-% TEST: Numeric Integration using adaptive Trapezoidal method
+% TEST: Numeric Integration using adaptive Trapezoidal and Simpson methods
 
 f = inline('-2*x^(-3) * cos(x^(-2))');
 a = 0.5;
@@ -11,7 +11,7 @@ set(gca, 'XScale', 'log');
 %b = 0.8;
 %Iexp = 1.640533    % Expected integral value
 
-tol = 10^(-2)       % Error tolerance
+tol = 10^(-4)       % Error tolerance
 
 display('-------------------------------------------');
 % Trapezoid adaptive method with relative error
@@ -32,7 +32,7 @@ printf('> Simpson method\n I = %f\n E = %f\n n = %d\n', I, E, n);
 
 display('-------------------------------------------');
 % Simpson adaptive method with relative error
-[ I x ] = quad_simpson_adapt(a, b, f, 10^(-4));
+[ I x ] = quad_simpson_adapt(a, b, f, tol);
 E = abs(Iexp - I)/Iexp;   % relative error
 n = length(x);
 printf('> Simpson adaptive method\n I = %f\n E = %f\n n = %d\n', I, E, n);
