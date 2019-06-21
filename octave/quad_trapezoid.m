@@ -1,5 +1,6 @@
-function I = trap(a, b, f, n)
-    % Composite trapezoidal rule quadrature
+function I = quad_trapezoid(a, b, f, n)
+    %
+    % Composite quadrature using trapezoid method. 
     %
     % Input
     %   a : integration interval start
@@ -18,4 +19,4 @@ function I = trap(a, b, f, n)
         s = s + 2*f(x);
     end
     s = s + f(b);
-    I = h*s/2
+    I = h*s/2;
