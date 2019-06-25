@@ -1,6 +1,6 @@
-function [x,steps] = newton_secant(x,f,f1,tolx,imax)
+function [x, steps] = newton_secant(x, f, f1, tolx, imax)
     %
-    % Newton root finding method  with Aitken acceleration
+    % Newton root finding method  with Aitken acceleration.
     %
     % Input:
     %   - x  : first root approximation
@@ -12,12 +12,11 @@ function [x,steps] = newton_secant(x,f,f1,tolx,imax)
     %   - x     : final root approximation
     %   - steps : required steps
     %
-    % Compute a second point using the plain Newton method
     fx0  = f(x);
     f1x0 = f1(x);
     x0   = x;
     x    = x0 - fx0/f1x0;
-    for i=1:imax
+    for i = 1:imax
         fx  = f(x);
         f1x = f1(x);
         if (abs(fx) <= tolx*abs(f1x) || fx == fx0)

@@ -1,4 +1,4 @@
-function [x,steps] = newton(x,f,f1,tolx,imax,m)
+function [x, steps] = newton(x, f, f1, tolx, imax, m)
     %
     % Newton root finding method
     %
@@ -13,9 +13,9 @@ function [x,steps] = newton(x,f,f1,tolx,imax,m)
     %   - x     : final root approximation
     %   - steps : required steps
     %
-    for i=1:imax
-        fx = feval(f, x);
-        f1x = feval(f1, x);
+    for i = 1:imax
+        fx = f(x);
+        f1x = f1(x);
         if (abs(fx) <= tolx*abs(f1x))
             break;
         end

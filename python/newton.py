@@ -1,6 +1,6 @@
 # Newton root finding methods
 
-def newton(x,f,f1,tolx,imax,m):
+def newton(x, f, f1, tolx, imax, m):
     '''
     Newton root finding method
 
@@ -15,16 +15,16 @@ def newton(x,f,f1,tolx,imax,m):
         - x     : final root approximation
         - steps : required steps (i+1)
     '''
-    for i in range(0,imax):
+    for i in range(0, imax):
         fx  = f(x)
         f1x = f1(x)
         if (abs(fx) <= tolx*abs(f1x)):
             break
         x = x - m*fx/f1x
-    return (x,i+1)
+    return x, i+1
 
 
-def newton_aitken(x,f,f1,tolx,imax):
+def newton_aitken(x, f, f1, tolx, imax):
     '''
     Newton root finding method with Aitken acceleration
  
@@ -54,10 +54,10 @@ def newton_aitken(x,f,f1,tolx,imax):
         x2 = x1-fx/f1x
         # Acceleration step
         x = (x1*x1-x*x2)/(2*x1-x2-x)
-    return (x,i+1)
+    return x, i+1
 
 
-def newton_chord(x,f,f1,tolx,imax):
+def newton_chord(x, f, f1, tolx, imax):
     '''
     Newton chords root finding method 
  
@@ -72,15 +72,15 @@ def newton_chord(x,f,f1,tolx,imax):
         - steps : required steps (i+1)
     '''
     f1x = f1(x)
-    for i in range(0,imax):
+    for i in range(0, imax):
         fx  = f(x)
         if (abs(fx) <= tolx*abs(f1x)):
             break
         x = x - fx/f1x
-    return (x,i+1)
+    return x, i+1
 
 
-def newton_secant(x,f,f1,tolx,imax):
+def newton_secant(x, f, f1, tolx, imax):
     '''
     Newton chords root finding method 
  
@@ -99,7 +99,7 @@ def newton_secant(x,f,f1,tolx,imax):
     f1x0 = f1(x)
     x0   = x
     x    = x0 - fx0/f1x0
-    for i in range(0,imax):
+    for i in range(0, imax):
         fx   = f(x)
         f1x  = f1(x)
         if (abs(fx) <= tolx*abs(f1x) or fx == fx0):
@@ -108,4 +108,4 @@ def newton_secant(x,f,f1,tolx,imax):
         x = x - fx*(x-x0)/(fx-fx0)
         x0 = tmp
         fx0 = fx
-    return (x,i+1)
+    return x, i+1

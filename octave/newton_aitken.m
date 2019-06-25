@@ -1,4 +1,4 @@
-function [x,steps] = newton_aitken(x,f,f1,tolx,imax)
+function [x, steps] = newton_aitken(x, f, f1, tolx, imax)
     %
     % Newton root finding method  with Aitken acceleration
     %
@@ -12,7 +12,7 @@ function [x,steps] = newton_aitken(x,f,f1,tolx,imax)
     %   - x     : final root approximation
     %   - steps : required steps
     %
-    for i=1:imax
+    for i = 1:imax
         % The first point is computed using plain Newton
         fx  = f(x);
         f1x = f1(x);
