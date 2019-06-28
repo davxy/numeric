@@ -12,7 +12,8 @@ function x = diagonal(D, b)
     if dlen != length(b)
        error('Error: input vectors length mismatch');
     end
-    for i=1:dlen
+    x = zeros(1, dlen);
+    for i = 1:dlen
         x(i) = b(i)/D(i);
     end
     x = x'; % return a column vector
