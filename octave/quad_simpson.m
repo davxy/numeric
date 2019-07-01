@@ -20,3 +20,4 @@ function I = quad_simpson(a, b, f, n)
     end
     s = s + f(b);
     I = h*s/6;
+end

@@ -20,3 +20,4 @@ function I = quad_trapezoid(a, b, f, n)
     end
     s = s + f(b);
     I = h*s/2;
+end
