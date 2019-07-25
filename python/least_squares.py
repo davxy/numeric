@@ -4,6 +4,7 @@ import numpy as np
 from qr_factor import qr_factor
 from triangular import triangular
 
+
 def least_squares(x, y, d, X):
     '''
     Least squares polynomial

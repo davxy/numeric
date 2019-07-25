@@ -1,9 +1,9 @@
 # TEST: Numeric Integration using adaptive Trapezoidal and Simpson methods
 
+import matplotlib.pyplot as plt
+import numpy as np
 from quad import quad_trapezoid, quad_simpson
 from quad import quad_trapezoid_adapt, quad_simpson_adapt
-import numpy as np
-import matplotlib.pyplot as plt
 
 
 f = lambda x: -2*x**(-3) * np.cos(x**(-2))

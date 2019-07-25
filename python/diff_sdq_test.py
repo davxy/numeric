@@ -3,8 +3,9 @@
 # to estimate the derivative at each of the sampling points using the SDQ
 # method.
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 
 N = 20
 x = np.linspace(-np.pi, np.pi, N)

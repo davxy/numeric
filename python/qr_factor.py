@@ -2,6 +2,7 @@
 
 import numpy as np
 
+
 def qr_factor_in(A):
     '''
     QR factorization algorithm working inplace.

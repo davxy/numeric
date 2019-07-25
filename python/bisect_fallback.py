@@ -1,6 +1,8 @@
 from bisect import bisect
+
 from newton import newton
 import numpy as np
+
 
 # Get machine precision as tolx
 tolx = np.finfo(float).eps

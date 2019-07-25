@@ -4,6 +4,7 @@ import numpy as np
 from palu_factor import palu_factor
 from triangular import triangular
 
+
 np.set_printoptions(suppress=True, precision=5)
 # TEST: PA=LU factorization
 

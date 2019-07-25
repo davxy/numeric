@@ -1,8 +1,9 @@
 # Newton interpolating polynomial test
 
-import numpy as np
-from newton_interp import newton_interp
 import matplotlib.pyplot as plt
+from newton_interp import newton_interp
+import numpy as np
+
 
 x = np.array([15, 42, 30])
 y = np.square(x)

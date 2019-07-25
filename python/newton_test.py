@@ -1,8 +1,10 @@
 # Newton root finding methods tests
 
+from math import sin, cos, exp, log
+
 from newton import newton, newton_aitken, newton_chord, newton_secant
-from math import sin,cos,exp,log
 import numpy as np
+
 
 # Get machine precision
 eps = np.finfo(float).eps

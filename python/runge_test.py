@@ -1,8 +1,10 @@
-import numpy as np
-import matplotlib.pyplot as plt
 import math
+
 from lagrange import lagrange
 from lebesgue import lebesgue_const
+import matplotlib.pyplot as plt
+import numpy as np
+
 
 # Runge example function
 def runge_example(x):

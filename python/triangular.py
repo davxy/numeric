@@ -2,6 +2,7 @@
 
 import numpy as np
 
+
 def triangular(A, b, typ):
     '''
     Input:

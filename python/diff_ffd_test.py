@@ -6,8 +6,9 @@
 # In this experiment, the SDQ method is not an option since the nodes are not
 # equally spaced.
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 
 N = 50
 x = np.random.uniform(-np.pi, np.pi, N)

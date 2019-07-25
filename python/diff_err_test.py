@@ -8,8 +8,9 @@
 # 
 # Note that the SDQ method produces smaller errors.
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 
 a = 0.5
 ddx = np.cos(a)

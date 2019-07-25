@@ -1,7 +1,8 @@
 # Newton interpolating polynomial
 
-import numpy as np
 from divdiff import divdiff
+import numpy as np
+
 
 def newton_interp(x, y, X):
     '''

@@ -1,10 +1,12 @@
 # Least squares interpolation test
 
-from least_squares import least_squares
-import numpy as np
 from math import sin
-import matplotlib.pyplot as plt
 from random import uniform
+
+from least_squares import least_squares
+import matplotlib.pyplot as plt
+import numpy as np
+
 
 # Interpolation interval
 xmin = -2*np.pi

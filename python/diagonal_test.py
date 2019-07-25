@@ -1,7 +1,8 @@
 # Diagonal linear system solver test
 
-import numpy as np
 from diagonal import diagonal
+import numpy as np
+
 
 D = [3,5,7,3,1,7,9,10,1,2]
 b = [4,8,1,4,3,9,10,12,11,7]

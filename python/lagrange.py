@@ -2,6 +2,7 @@
 
 import numpy as np
 
+
 def lagrange(x, y, X):
     '''
     Lagrange interpolation method

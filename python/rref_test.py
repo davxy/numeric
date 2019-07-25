@@ -3,6 +3,7 @@
 import numpy as np
 from rref import rref
 
+
 # Test if the reduced row echelon function
 A = np.matrix(' 1  2  -1;'
               ' 2  3  -1;'

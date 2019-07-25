@@ -2,6 +2,7 @@
 
 import numpy as np
 
+
 def spline3(x, y, X):
     '''
     Cubic Spline interpolation method.

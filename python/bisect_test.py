@@ -1,8 +1,10 @@
 # Bisection method root finding tests
 
 from bisect import bisect
-from math import sin,cos,exp
+from math import sin, cos, exp
+
 import numpy as np
+
 
 # Get machine precision
 eps = np.finfo(float).eps

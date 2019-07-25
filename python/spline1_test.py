@@ -1,8 +1,10 @@
 # Linear spline interpolation test
 
+import math
+
 import matplotlib.pyplot as plt
 import numpy as np
-import math
+
 
 x = np.linspace(-math.pi,math.pi,8) 
 y = [math.sin(k) for k in x ]
