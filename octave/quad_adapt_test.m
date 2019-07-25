@@ -47,6 +47,13 @@ I = quad_simpson(a, b, f, n-1);
 E = abs(Iexp - I)/Iexp;
 printf('> Simpson method\n I = %f\n E = %f\n n = %d\n', I, E, n);
 
+display('-------------------------------------------');
+% Romberg method
+k = 12;
+I = quad_romberg(a, b, f, k)
+E = abs(Iexp - I)/Iexp;
+printf('> Romberg method\n I = %f\n E = %f\n n = %d\n', I, E, k);
+
 
 % Plot function graph using the last Simpson nodes
 N = 10000;    % Number of points for a smooth plot

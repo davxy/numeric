@@ -1,11 +1,11 @@
 %
 % Triangular matrix resolution method
 %
-% input:
+% Input:
 %  - A: triangular matrix
 %  - b: known terms vector
 %  - type: 0 if A is upper triangular, 1 if is lower triangular
-% output:
+% Output:
 %  - x: the results vector
 %
 function x = triangular(A, b, type)

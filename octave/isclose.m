@@ -1,5 +1,5 @@
 %
-% usage: test = isclose(a,b,tol)
+% Usage: test = isclose(a,b,tol)
 %
 % tests if matrix a is approximately equal to b within a specified 
 % tolerance interval (b-tol <= a <= b+tol)
@@ -9,18 +9,15 @@
 %
 % calls: none
 %
-% inputs:
+% Input:
+%   a(nr,nc) : matrix of data values to test
+%   b(nr,nc) : matrix of data values for comparison (or a single scalar value)
+%   tol : tolerance used in computation
+% Output:
+%   test(nr,nc) : matrix of test results:
 %
-% a(nr,nc) = matrix of data values to test
-% b(nr,nc) = matrix of data values for comparison (or a single scalar value)
-%      tol = tolerance used in computation
-%
-% outputs:
-%
-% test(nr,nc) = matrix of test results:
-%
-%        test(i,j) = 0 -> a(i,j) is not equal to b(i,j) (or is NaN)
-%        test(i,j) = 1 -> a(i,j) is approximately equal to b(i,j)
+% test(i,j) = 0 -> a(i,j) is not equal to b(i,j) (or is NaN)
+%  test(i,j) = 1 -> a(i,j) is approximately equal to b(i,j)
 %
 
 function test = isclose(a,b,tol)

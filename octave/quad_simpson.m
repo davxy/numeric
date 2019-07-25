@@ -7,6 +7,8 @@ function I = quad_simpson(a, b, f, n)
     %   b : integration interval end
     %   f : function reference
     %   n : number of segments
+    % Output
+    %   I : integral estimation
     %
     if (b <= a)
         error('interval start must be less than interval stop');

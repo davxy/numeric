@@ -1,9 +1,9 @@
 function A = lu_factor(A)
     % LU factorization algorithm
     %
-    % input:
+    % Input:
     %   - A : the coefficient matrix
-    % output:
+    % Output:
     %   - A : the LU factorized matrix
     n = length(A);
     for i = 1:n-1
