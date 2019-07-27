@@ -1,10 +1,4 @@
 function I = quad_romberg(a, b, f, n)
-    r = quad_romberg_tab(a, b, f, n)
-    [m, n] = size(r)
-    I = r(m, n)
-end
-
-function r = quad_romberg_tab(a, b, f, n)
     %
     % Romberg quadrature
     %
@@ -14,10 +8,23 @@ function r = quad_romberg_tab(a, b, f, n)
     %   f : function reference
     %   n : number of rows in Romberg tableau
     % Output:
-    %   r : Romberg tableau containing the integral values
+    %   I : Romberg table most accurate value (I(nn))
     %
-    % Examples:
-    %   r = romberg(inline('sin(x)'),0,1,5);
+    r = quad_romberg_tab(a, b, f, n);
+    I = r(n, n);
+end
+
+function r = quad_romberg_tab(a, b, f, n)
+    %
+    % Romberg integral table
+    %
+    % Input:
+    %   a : integration interval start
+    %   b : integration interval end
+    %   f : function reference
+    %   n : number of rows in Romberg tableau
+    % Output:
+    %   r : Romberg table containing the integral values
     %
     h = (b - a) ./ (2.^(0:n-1));
     r(1,1) = (b - a) * (f(a) + f(b)) / 2;
