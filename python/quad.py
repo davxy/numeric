@@ -103,7 +103,7 @@ def quad_simpson_adapt(a, b, f, tol):
     return I, x
 
 
-def romberg(a, b, f, n):
+def quad_romberg(a, b, f, n):
     '''
     Romberg quadrature
     
@@ -115,12 +115,12 @@ def romberg(a, b, f, n):
     Output:
       I : integral estimation
     '''
-    r = romberg_tab(a, b, f, n)
+    r = quad_romberg_tab(a, b, f, n)
     I = r[n-1, n-1]
     return I
 
 
-def romberg_tab(a, b, f, n):
+def quad_romberg_tab(a, b, f, n):
     '''
     Romberg quadrature table
     
@@ -139,41 +139,9 @@ def romberg_tab(a, b, f, n):
     r[0,0] = (b - a) * (f(a) + f(b)) / 2
     for i in range(1, n):
         subtotal = 0
-        for j in range(1, j-1):
-            subtotal += f(a + (2 * 2**j - 1)*h(i))
+        for k in range(1, 2**(i-1)+1):
+            subtotal += f(a + (2*k - 1)*h[i])
         r[i,0] = r[i-1,0]/2 + h[i]*subtotal
-        for j in range(2, i):
-            r[i,j] = TODO
+        for k in range(1, i+1):
+            r[i,k] = (4**k * r[i,k-1] - r[i-1,k-1]) / (4**k - 1);
     return r
-
-''' MATLAB REFERENCE IMPLEMENTATION
-
-    function r = quad_romberg_tab(a, b, f, n)
-    %
-    % Romberg quadrature
-    %
-    % Input:
-    %   a : integration interval start
-    %   b : integration interval end
-    %   f : function reference
-    %   n : number of rows in Romberg tableau
-    % Output:
-    %   r : Romberg tableau containing the integral values
-    %
-    % Examples:
-    %   r = romberg(inline('sin(x)'),0,1,5);
-    %
-    h = (b - a) ./ (2.^(0:n-1));
-    r(1,1) = (b - a) * (f(a) + f(b)) / 2;
-    for j = 2:n
-        subtotal = 0;
-        for i = 1:2^(j-2)
-            subtotal = subtotal + f(a + (2 * i - 1) * h(j));
-        end
-        r(j,1) = r(j-1,1) / 2 + h(j) * subtotal;
-        for k = 2:j
-            r(j,k) = (4^(k-1) * r(j,k-1) - r(j-1,k-1)) / (4^(k-1) - 1);
-        end
-    end
-end
-'''

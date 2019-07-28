@@ -28,14 +28,14 @@ function r = quad_romberg_tab(a, b, f, n)
     %
     h = (b - a) ./ (2.^(0:n-1));
     r(1,1) = (b - a) * (f(a) + f(b)) / 2;
-    for j = 2:n
+    for i = 2:n
         subtotal = 0;
-        for i = 1:2^(j-2)
-            subtotal = subtotal + f(a + (2 * i - 1) * h(j));
+        for k = 1:2^(i-2)
+            subtotal = subtotal + f(a + (2*k - 1)*h(i));
         end
-        r(j,1) = r(j-1,1) / 2 + h(j) * subtotal;
-        for k = 2:j
-            r(j,k) = (4^(k-1) * r(j,k-1) - r(j-1,k-1)) / (4^(k-1) - 1);
+        r(i,1) = r(i-1,1) / 2 + h(i) * subtotal;
+        for k = 2:i
+            r(i,k) = (4^(k-1) * r(i,k-1) - r(i-1,k-1)) / (4^(k-1) - 1);
         end
     end
 end
