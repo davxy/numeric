@@ -143,5 +143,5 @@ def quad_romberg_tab(a, b, f, n):
             subtotal += f(a + (2*k - 1)*h[i])
         r[i,0] = r[i-1,0]/2 + h[i]*subtotal
         for k in range(1, i+1):
-            r[i,k] = (4**k * r[i,k-1] - r[i-1,k-1]) / (4**k - 1);
+            r[i,k] = (4**k * r[i,k-1] - r[i-1,k-1]) / (4**k - 1)
     return r
