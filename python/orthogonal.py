@@ -2,6 +2,7 @@
 
 import numpy as np
 
+
 def orthogonal(A, b, chk=0):
     # Optionally chk for orthogonality
     if chk == 1 and is_orthogonal(A) == 0:

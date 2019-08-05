@@ -1,7 +1,9 @@
+import math
+
 from lebesgue import lebesgue_func
 import matplotlib.pyplot as plt
 import numpy as np
-import math
+
 
 def run_test(a, b, xpoints):
     xx = np.linspace(a, b, 100*len(xpoints))

@@ -1,8 +1,9 @@
 # Cubic spline interpolation test
 
-from spline3 import spline3
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+from spline3 import spline3
+
 
 nq = 100    # query points
 n  = 15     # interpolation nodes

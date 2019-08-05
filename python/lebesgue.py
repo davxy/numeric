@@ -1,6 +1,8 @@
+import math
+
 import matplotlib.pyplot as plt
 import numpy as np
-import math
+
 
 def lebesgue_func(x, xpoints):
     n = len(xpoints)

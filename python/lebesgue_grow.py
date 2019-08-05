@@ -1,7 +1,9 @@
+import math
+
+from lebesgue import lebesgue_const
 import matplotlib.pyplot as plt
 import numpy as np
-import math
-from lebesgue import lebesgue_const
+
 
 def equis_nodes(a, b, n):
     return np.linspace(a, b, n)

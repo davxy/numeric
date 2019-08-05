@@ -1,8 +1,9 @@
 # Plot the Vandermonde matrix condition number given an increasing
 # matrix order
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 
 ordermax = 20
 vcond = []

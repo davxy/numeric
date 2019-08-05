@@ -1,6 +1,7 @@
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 from numpy.polynomial.chebyshev import Chebyshev, cheb2poly
+
 
 mindeg, maxdeg = 0, 5
 

@@ -3,6 +3,7 @@
 import numpy as np
 from qr_factor import qr_factor
 
+
 # Overdetermined matrix
 A = np.matrix('-1 -1  1;'
               ' 1  3  3;'

@@ -1,8 +1,9 @@
 # LU factorization algorithm test
 
-import numpy as np
 from lu_factor import lu_factor
+import numpy as np
 from triangular import triangular
+
 
 # TEST: LU factorization
 # Non singular 6x6 matrix

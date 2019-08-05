@@ -1,6 +1,7 @@
 # Bisection root finding method
 
-from math import ceil,log2
+from math import ceil, log2
+
 
 def bisect(a,b,f,tolx):
     ''' 

@@ -1,11 +1,12 @@
 # Orthogonal linear system solver tests
 
-import numpy as np
 from math import sqrt
+
+import numpy as np
 from orthogonal import orthogonal
 
-################################################################################
 
+################################################################################
 # 2x2 orthogonal matrix
 A = np.matrix('1  1;'
               '1 -1', float)

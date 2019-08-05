@@ -1,8 +1,9 @@
 # Lagrange interpolating polynomial test
 
 from lagrange import lagrange
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 
 # Three points are sufficient to interpolate a polynomial of degree 2
 x = np.array([15, 42, 30])

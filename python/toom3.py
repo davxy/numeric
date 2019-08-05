@@ -1,7 +1,9 @@
 # Toom Cook Multiplication
 
-from lagrange import lagrange_poly
 import math
+
+from lagrange import lagrange_poly
+
 
 def split(n, base):
     digs = []
