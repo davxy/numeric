@@ -27,8 +27,9 @@ Algorithms
 - Reduced Row Echelon Form
 - Diagonal systems
 - Triangular systems
-- LU Factorization
-- PA=LU Factorization
+- LU factorization
+- PA=LU factorization
+- LL' Cholesky factorization
 
 
 ### Polynomial Interpolation
@@ -54,6 +55,7 @@ Algorithms
 - Composite trapezoid method
 - Composite Simpson's method
 - Adaptive methods
+- Romberg method
 
 
 ### Misc
