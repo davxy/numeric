@@ -1,19 +1,18 @@
-function L = chol_factor(M)
+function L = chol_factor(A)
     %
     % Cholesky LL' factorization
     %
     % Input
-    %   M : input matrix
+    %   A : input matrix
     % Output
-    %   L : lower triangular matrix factor (M=L*L')
+    %   L : lower triangular matrix factor (A=L*L')
     %
-    n = length(M);
+    n = length(A);
     L = zeros(n, n);
     for i = 1:n
-        %L(i, i) = sqrt(M(i, i) - L(i, :)*L(i, :)');
-        L(i, i) = sqrt(M(i, i) - L(i, 1:i-1)*L(i, 1:i-1)');
+        L(i, i) = sqrt(A(i, i) - L(i, :)*L(i, :)');
         for j = (i+1):n
-            L(j, i) = (M(j, i) - L(i, :)*L(j, :)') / L(i, i);
+            L(j, i) = (A(j, i) - L(i, :)*L(j, :)') / L(i, i);
         end
     end
 end

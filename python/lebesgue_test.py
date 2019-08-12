@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def run_test(a, b, xpoints):
+def lebesgue_plot(a, b, xpoints):
     xx = np.linspace(a, b, 100*len(xpoints))
     yy = [ lebesgue_func(x, xpoints) for x in xx ]
     # Plot the lebesgue function and constant
@@ -25,15 +25,15 @@ def cheby_nodes(a, b, n):
 # Test n equidpaced points
 def equid_test(a, b, n):
     xpoints = equid_nodes(a, b, n)
-    run_test(a, b, xpoints)
+    lebesgue_plot(a, b, xpoints)
 
 # Test n Chebyshev nodes
 def cheby_test(a, b, n):
     xpoints = cheby_nodes(a, b, n)
-    run_test(a, b, xpoints)
+    lebesgue_plot(a, b, xpoints)
 
 # Script
-a,b,n = -1.0,1.0,10
-equid_test(a,b,n)
-cheby_test(a,b,n)
+a, b, n = -1.0, 1.0, 10
+equid_test(a, b, n)
+cheby_test(a, b, n)
 plt.show()

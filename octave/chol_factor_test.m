@@ -4,7 +4,7 @@
 A = [ 5    1.2  0.3 -0.6;
       1.2  6   -0.4  0.9;
       0.3 -0.4  8    1.7;
-     -0.6  0.9  1.7  10 ];
+     -0.6  0.9  1.7  10 ]
 % Computation of the L factor
 L = chol_factor(A)
 % Check
