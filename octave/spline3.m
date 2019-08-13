@@ -47,7 +47,7 @@ function T = build_tridiag(h, n)
         T(i, i) = 2*(h(i) + h(i+1));
     end
     for i = 1:n-1
-        T(i+1, i) = h(i);
+        T(i+1, i) = h(i+1);
         T(i, i+1) = h(i+1);
     end
 end

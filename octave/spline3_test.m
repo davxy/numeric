@@ -1,21 +1,16 @@
 % Cubic spline interpolation test
 
 nq = 100;   % query points
-n  = 15;    % interpolation nodes
+n  = 5; %15;    % number of interpolation nodes
 
+% interpolation nodes
 x = linspace(-1, 1, n);
-y = zeros(1,n);
-for i = 1:n
-    y(i) = 1/(1 + 25*x(i)^2);
-end
+y = 1 ./ (1 + 25*x.^2);
 
-% 100 evenly spaced values between 0 and 100
+% Get function values over 100 evenly spaced values
 X = linspace(min(x), max(x), nq);
-% Get true function values
-f = zeros(1,nq);
-for i = 1:nq
-    f(i)=1/(1 + 25*X(i)^2);
-end
+f = 1 ./ (1 + 25*X.^2);
+
 % Get yy values via interpolation
 Y = spline3(x, y, X);
 

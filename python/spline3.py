@@ -47,7 +47,7 @@ def build_tridiag(h, n):
     for i in range(0, n):
         T[i,i] = 2*(h[i] + h[i+1])
     for i in range(0, n-1):
-        T[i+1,i] = h[i]
+        T[i+1,i] = h[i+1]
         T[i,i+1] = h[i+1]
     return T
 
