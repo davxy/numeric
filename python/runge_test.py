@@ -14,7 +14,7 @@ def runge_example(x):
 def equis_nodes(a, b, n):
     return np.linspace(a, b, n)
 
-# Returns a list of chebyshev nodes over [a,b]
+# Returns a list of n Chebyshev nodes over [a,b]
 def cheby_nodes(a, b, n):
     # Chebyscev nodes over the interval [-1,1]
     l = [ math.cos((2*x+1)*math.pi/(2*n)) for x in range(0, n) ]
@@ -33,7 +33,6 @@ get_nodes = cheby_nodes
 xx = np.linspace(ibeg, iend, 100)
 yy = [ func(x) for x in xx ]
 for n in range(minpoints, maxpoints+1, 3):
-    # Equally spaced nodes test
     img, ax = plt.subplots()
     ax.plot(xx, yy)
     xpoints = get_nodes(ibeg, iend, n)

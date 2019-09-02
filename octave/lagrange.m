@@ -18,7 +18,7 @@ function Y = lagrange(x, y, X)
         L = ones(1, size(X,2));
         for j = 1:n
             if (i != j)
-                L = L .* (X-x(j))/(x(i)-x(j));
+                L = L .* (X - x(j)) / (x(i) - x(j));
             end
         end
         Y = Y + y(i)*L;
