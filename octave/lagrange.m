@@ -21,6 +21,6 @@ function Y = lagrange(x, y, X)
                 L = L .* (X-x(j))/(x(i)-x(j));
             end
         end
-        Y = Y + y(i)*L
+        Y = Y + y(i)*L;
    end
 end
