@@ -7,7 +7,7 @@ import numpy as np
 
 
 # Runge example function
-def runge_example(x):
+def runge_func(x):
     return 1.0/(1.0 + x**2)
 
 # Returns a list of equidistant nodes over [a,b]
@@ -24,16 +24,18 @@ def cheby_nodes(a, b, n):
 #
 # Configurations
 #
-minpoints, maxpoints = 3, 20    # min and max number of nodes
-ibeg, iend = -5,5               # interval begin and end
-func = runge_example
+minpoints, maxpoints = 5, 17    # min and max number of nodes
+ibeg, iend = -5, 5              # interval begin and end
+step = 4
+func = runge_func
+
 #get_nodes = equis_nodes
 get_nodes = cheby_nodes
 
 xx = np.linspace(ibeg, iend, 100)
 yy = [ func(x) for x in xx ]
-for n in range(minpoints, maxpoints+1, 3):
-    img, ax = plt.subplots()
+for n in range(minpoints, maxpoints+1, step):
+    _, ax = plt.subplots()
     ax.plot(xx, yy)
     xpoints = get_nodes(ibeg, iend, n)
     ypoints = [ func(x) for x in xpoints ]
@@ -42,15 +44,9 @@ for n in range(minpoints, maxpoints+1, 3):
     ax.scatter(xpoints, ypoints, s=15, color='black')
     ax.text(0.2, 0.9, 'n={}'.format(n),
             fontsize=20, transform=plt.gcf().transFigure)
-    # Show Lebesgue constant
-    lamb = lebesgue_const(xx, xpoints);
-    ax.text(0.4, 0.9, 'lambda={:.3f}'.format(lamb),
-            fontsize=20, transform=plt.gcf().transFigure)
-    # Plot x axis and nodes
-    ax.plot([ibeg,iend],[0,0],color='black')
-    ax.scatter(xpoints,np.zeros(len(xpoints)), s=15, color='black')
-    ax.grid(True)
-    #img.savefig('runge{}.png'.format(n))
+    # Print Lebesgue constant
+    lamb = lebesgue_const(xx, xpoints)
+    print("n = {:2}   lambda = {}".format(n, lamb))
 
 # Show the graphs
 plt.show()
