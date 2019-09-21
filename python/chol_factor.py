@@ -13,7 +13,10 @@ def chol_factor(M):
     n = len(M)
     L = np.zeros((n, n))
     for i in range(0, n):
-        L[i, i] = np.sqrt(M[i, i] - np.dot(L[i, :],L[i, :]))
+        val = M[i, i] - np.dot(L[i, :],L[i, :])
+        if val < 0:
+            raise Exception('The matrix is not positive definite')
+        L[i, i] = np.sqrt(val)
         for j in range(i+1, n):
             L[j, i] = (M[j, i] - np.dot(L[i, :],L[j, :])) / L[i, i]
     return L

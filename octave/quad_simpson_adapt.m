@@ -12,7 +12,7 @@ function [ I x ] = quad_simpson_adapt(a, b, f, tol)
     %   x : x nodes
     %
     I1 = quad_simpson(a, b, f, 1);
-    I2 = quad_simpson(a, b, f, 3);
+    I2 = quad_simpson(a, b, f, 2);
     if (abs(I1-I2)/15 <= tol)
         I = I2;
         x = [ a, (a+b)/2, b ];
