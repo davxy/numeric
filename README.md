@@ -1,7 +1,7 @@
 Numerical Analysis
 ==================
 
-Companion book [download](https://datawok.net/files/2019/numeric.pdf)
+Companion [book](https://datawok.net/posts/numerical-analysis)
 
 
 Algorithms
